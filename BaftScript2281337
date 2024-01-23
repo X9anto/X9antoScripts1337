@@ -1,0 +1,136 @@
+-- Declare a 'lib' variable and load the library.
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Arceus-X-UI-Library/main/source.lua"))()
+-- Set the title
+lib:SetTitle("Sctipt By X9anto/Tg @X9anto") -- Note: you can use rich text as well.
+-- Set the icon
+lib:SetIcon("http://www.roblox.com/asset/?id=15235770505") -- Set the icon, with roblox asset id or anything that valid. You also able to use getcustomasset() to load custom image.
+-- Переменные
+local AutoStartBreadMission = false
+local AutoFarm = false
+local AutoFarmSpeed = 1
+local Fly = false
+local FlySpeed = 25
+local plr = game.Players.LocalPlayer
+local tween = game:GetService("TweenService")
+-- Стоп миссии
+lib:AddButton("StopMission", function()
+    local args = {
+        [1] = 0
+    }
+    workspace.QuestMakerEvent:FireServer(unpack(args))
+end)
+-- Старт подарок
+lib:AddButton("StartGiftMission", function()
+    local args = {
+        [1] = 99
+    }
+    workspace.QuestMakerEvent:FireServer(unpack(args))
+end)
+-- Старт новогодние солдатики
+lib:AddButton("StartChirstmassMission", function()
+    local args = {
+        [1] = 101
+    }
+    workspace.QuestMakerEvent:FireServer(unpack(args))
+end)
+-- Старт хлеб
+lib:AddButton("StartBreadMission", function()
+    local args = {
+        [1] = 100
+    }
+    workspace.QuestMakerEvent:FireServer(unpack(args))
+end)
+-- АвтоСтарт хлеб
+lib:AddToggle("AutoStartBreadMission", function(state)
+    if state then
+        AutoStartBreadMission = true
+        while AutoStartBreadMission do
+            local args = {
+                [1] = 100
+            }
+            workspace.QuestMakerEvent:FireServer(unpack(args))
+            wait(90)
+        end
+    else
+        AutoStartBreadMission = false
+        local args = {
+            [1] = 0
+        }
+        workspace.QuestMakerEvent:FireServer(unpack(args))
+    end
+end, false)
+-- Полет
+lib:AddToggle("Fly", function(state)
+    if state and AutoFarm == false then
+        if not Fly that fly = true end
+        while Fly do
+			plr.Character.Humanoid.Sit = true
+			plr.Character.Head.Velocity = workspace.CurrentCamera.CFrame.LookVector*FlySpeed + Vector3.new(0,10,0)
+			wait()
+        else
+            break
+		end
+    else
+        plr.Character.Humanoid.Sit = false
+        Fly = false
+    end
+end, false)
+--АвтоФарм
+lib:AddToggle("AutoFarm(Test)", function(state)
+    if state and Fly == false then
+        AutoFarm = true
+        while AutoFarm do
+            plr.Character.Humanoid.Sit = true
+            local info1 = TweenInfo.new(3*AutoFarmSpeed,Enum.EasingStyle.Linear,Enum.EasingDirection.In)
+            local info2 = TweenInfo.new(17*AutoFarmSpeed,Enum.EasingStyle.Linear,Enum.EasingDirection.In)
+            local info3 = TweenInfo.new(3*AutoFarmSpeed,Enum.EasingStyle.Linear,Enum.EasingDirection.In)
+            tween:Create(plr.Character.HumanoidRootPart,info1,{CFrame = CFrame.new(-50,50,800)}):Play()
+            wait(3*AutoFarmSpeed)
+            tween:Create(plr.Character.HumanoidRootPart,info2,{CFrame = CFrame.new(-50,50,8630)}):Play()
+            wait(17*AutoFarmSpeed)
+            tween:Create(plr.Character.HumanoidRootPart,info3,{CFrame = CFrame.new(-50,-340,9490)}):Play()
+            wait(3*AutoFarmSpeed)
+            plr.Character.Humanoid.Sit = false
+            --Время сундука
+            task.wait(20)
+        end
+    else
+        AutoFarm = false
+    end
+end, false)
+--- СкоросотьАвтоФарма
+lib:AddComboBox("FarmSpeed", {"1","2","3","4","5"}, function(selection)
+    if selection == "1" then -- This is an example, you might modify a little bit.
+        AutoFarmSpeed = 1
+    elseif selection == "2" then
+        AutoFarmSpeed = 2
+    elseif selection == "3" then
+        AutoFarmSpeed = 3
+    elseif selection == "4" then
+        AutoFarmSpeed = 4
+    elseif selection == "5" then
+        AutoFarmSpeed = 5
+    end
+end)
+-- Скорость полета
+lib:AddComboBox("FlySpeed", {"1","5","10","15","25"}, function(selection)
+    if selection == "1" then
+        FlySpeed = 25
+    elseif selection == "2" then
+        FlySpeed = 50
+    elseif selection == "3" then
+        FlySpeed = 75
+    elseif selection == "4" then
+        FlySpeed = 125
+    elseif selection == "5" then
+        FlySpeed = 175
+    end
+end)
+-- Set the Background Color (optional)
+lib:SetBackgroundColor(32, 32, 32)
+-- Set the X button color (optional)
+lib:SetCloseBtnColor(255, 0, 0)
+-- Set the title color (optional)
+lib:SetTitleColor(255, 0, 0)
+-- Set the Buttons background color.
+lib:SetButtonsColor(128, 128, 128)
