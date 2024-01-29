@@ -527,26 +527,20 @@ function lib:SetIcon(img)
     Logo.Image = img
 end
 
-function lib:SetBackgroundColor(r, g ,b)
-    Main.BackgroundColor3 = Color3.fromRGB(r, g, b)
-    Intro.BackgroundColor3 = Color3.fromRGB(r, g, b)
-end
 
-function lib:SetTitleColor(r, g, b)
-    Title.TextColor3 = Color3.fromRGB(r, g, b)
-end
-
-function lib:SetCloseBtnColor(r, g, b)
-    Close.TextColor3 = Color3.fromRGB(r, g, b)
-	Img_2.TextColor3 = Color3.fromRGB(r, g, b)
-	Check.BackgroundColor3 = Color3.fromRGB(r, g, b)
-end
-
-function lib:SetButtonsColor(r, g ,b)
-    Toggle.BackgroundColor3 = Color3.fromRGB(r, g, b)
-	Button.BackgroundColor3 = Color3.fromRGB(r, g, b)
-	ComboElem.BackgroundColor3 = Color3.fromRGB(r, g, b)
-	ComboBox.BackgroundColor3 = Color3.fromRGB(r, g, b)
+function lib:SetTheme(Theme)
+	if Theme == "Sigma" then
+		Main.BackgroundColor3 = Color3.fromRGB(25,8,68)
+    	Intro.BackgroundColor3 = Color3.fromRGB(35,5,68)
+		Title.TextColor3 = Color3.fromRGB(60,0,68)
+		Close.TextColor3 = Color3.fromRGB(80,0,48)
+		Img_2.TextColor3 = Color3.fromRGB(8,25,68)
+		Check.BackgroundColor3 = Color3.fromRGB(34,6,68)
+   		Toggle.BackgroundColor3 = Color3.fromRGB(40,5,68)
+		Button.BackgroundColor3 = Color3.fromRGB(28,8,68)
+		ComboElem.BackgroundColor3 = Color3.fromRGB(9,17,68)
+		ComboBox.BackgroundColor3 = Color3.fromRGB(25,7,68)
+	end
 end
 
 -- INIT
