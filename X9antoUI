@@ -55,7 +55,7 @@ Main.Parent = Sigmus
 Main.Active = true
 Main.Draggable = true
 Main.AnchorPoint = Vector2.new(0.5, 0.5)
-Main.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Main.BackgroundColor3 = Color3.fromRGB(65,105,225)
 Main.BorderSizePixel = 0
 Main.Position = UDim2.new(0.5, 0, -0.2, 0) --UDim2.new(0.5, 0, 0.5, 0)
 Main.Size = UDim2.new(0.3, 0, 0.3, 0)
@@ -65,7 +65,7 @@ UICorner.Parent = Main
 
 Intro.Name = "Intro"
 Intro.Parent = Main
-Intro.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Intro.BackgroundColor3 = Color3.fromRGB(65,105,225)
 Intro.ClipsDescendants = true
 Intro.Size = UDim2.new(1, 0, 1, 0)
 Intro.ZIndex = 2
@@ -90,7 +90,7 @@ UIAspectRatioConstraint.Parent = Logo
 Title.Name = "Title"
 Title.Parent = Main
 Title.AnchorPoint = Vector2.new(1, 0)
-Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundColor3 = Color3.fromRGB(0,191,255)
 Title.BackgroundTransparency = 1
 Title.BorderSizePixel = 0
 Title.Position = UDim2.new(0.975, 0, 0.075, 0)
@@ -127,7 +127,7 @@ UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 Toggle.Name = "Toggle"
 Toggle.Visible = false
 --Toggle.Parent = Sigmus
-Toggle.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Toggle.BackgroundColor3 = Color3.fromRGB(0,191,255)
 Toggle.Size = UDim2.new(0.95, 0, 0, 50)
 
 UICorner_3.CornerRadius = UDim.new(0.25, 0)
@@ -148,7 +148,7 @@ UICorner_4.Parent = Enabled
 Check.Name = "Check"
 Check.Parent = Enabled
 Check.AnchorPoint = Vector2.new(0.5, 0.5)
-Check.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Check.BackgroundColor3 = Color3.fromRGB(0,191,255)
 Check.Position = UDim2.new(0.5, 0, 0.5, 0)
 Check.Size = UDim2.new(0.65, 0, 0.65, 0)
 
@@ -179,7 +179,7 @@ UIGradient.Parent = Toggle
 
 Button.Name = "Button"
 --Button.Parent = Sigmus
-Button.BackgroundColor3 = Color3.fromRGB(100,100,100)
+Button.BackgroundColor3 = Color3.fromRGB(0,127,255)
 Button.Size = UDim2.new(0.95, 0, 0, 50)
 
 UICorner_6.CornerRadius = UDim.new(0.25, 0)
@@ -219,7 +219,7 @@ Close.Position = UDim2.new(0.8, 0, 0.1, 0)
 Close.Size = UDim2.new(0.15, 0, 0.125, 0)
 Close.Font = Enum.Font.FredokaOne
 Close.Text = "X"
-Close.TextColor3 = Color3.fromRGB(255, 0, 0)
+Close.TextColor3 = Color3.fromRGB(0,191,255)
 Close.TextScaled = true
 Close.TextSize = 14
 Close.TextWrapped = true
@@ -227,7 +227,7 @@ Close.TextXAlignment = Enum.TextXAlignment.Right
 Close.Parent = Main
 
 ComboElem.Name = "ComboElem"
-ComboElem.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+ComboElem.BackgroundColor3 = Color3.fromRGB(0,127,255)
 ComboElem.Size = UDim2.new(0.95, 0, 0, 50)
 
 UICorner_7.CornerRadius = UDim.new(0.25, 0)
@@ -273,7 +273,7 @@ Img.TextWrapped = true
 UIAspectRatioConstraint_4.Parent = Img
 
 ComboBox.Name = "ComboBox"
-ComboBox.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+ComboBox.BackgroundColor3 = Color3.fromRGB(0,127,255)
 ComboBox.Size = UDim2.new(0.95, 0, 0, 50)
 
 UICorner_8.CornerRadius = UDim.new(0.25, 0)
@@ -310,7 +310,7 @@ Img_2.Position = UDim2.new(0.975, 0, 0.5, 0)
 Img_2.Size = UDim2.new(0.75, 0, 0.75, 0)
 Img_2.Font = Enum.Font.FredokaOne
 Img_2.Text = "^"
-Img_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+Img_2.TextColor3 = Color3.fromRGB(65,105,225)
 Img_2.TextScaled = true
 Img_2.TextSize = 14
 Img_2.TextWrapped = true
