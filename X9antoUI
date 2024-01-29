@@ -179,7 +179,7 @@ UIGradient.Parent = Toggle
 
 Button.Name = "Button"
 --Button.Parent = Sigmus
-Button.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Button.BackgroundColor3 = Color3.fromRGB(100,100,100)
 Button.Size = UDim2.new(0.95, 0, 0, 50)
 
 UICorner_6.CornerRadius = UDim.new(0.25, 0)
@@ -218,7 +218,7 @@ Close.BorderSizePixel = 0
 Close.Position = UDim2.new(0.8, 0, 0.1, 0)
 Close.Size = UDim2.new(0.15, 0, 0.125, 0)
 Close.Font = Enum.Font.FredokaOne
-Close.Text = "-"
+Close.Text = "X"
 Close.TextColor3 = Color3.fromRGB(255, 0, 0)
 Close.TextScaled = true
 Close.TextSize = 14
@@ -530,16 +530,16 @@ end
 
 function lib:SetTheme(Theme)
 	if Theme == "Sigma" then
-		Main.BackgroundColor3 = Color3.fromRGB(25,8,68)
-    	Intro.BackgroundColor3 = Color3.fromRGB(35,5,68)
-		Title.TextColor3 = Color3.fromRGB(60,0,68)
-		Close.TextColor3 = Color3.fromRGB(80,0,48)
-		Img_2.TextColor3 = Color3.fromRGB(8,25,68)
-		Check.BackgroundColor3 = Color3.fromRGB(34,6,68)
-   		Toggle.BackgroundColor3 = Color3.fromRGB(40,5,68)
-		Button.BackgroundColor3 = Color3.fromRGB(28,8,68)
-		ComboElem.BackgroundColor3 = Color3.fromRGB(9,17,68)
-		ComboBox.BackgroundColor3 = Color3.fromRGB(25,7,68)
+		Main.BackgroundColor3 = Color3.fromRGB(65,105,225)
+    	Intro.BackgroundColor3 = Color3.fromRGB(65,105,225)
+		Title.TextColor3 = Color3.fromRGB(0,191,255)
+		Close.TextColor3 = Color3.fromRGB(0,191,255)
+		Img_2.TextColor3 = Color3.fromRGB(65,105,225)
+		Check.BackgroundColor3 = Color3.fromRGB(0,191,255)
+   		Toggle.BackgroundColor3 = Color3.fromRGB(0,191,255)
+		Button.BackgroundColor3 = Color3.fromRGB(0,127,255)
+		ComboElem.BackgroundColor3 = Color3.fromRGB(0,127,255)
+		ComboBox.BackgroundColor3 = Color3.fromRGB(0,127,255)
 	end
 end
 
