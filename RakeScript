@@ -227,10 +227,12 @@ end, false)
 --FullBright
 lib:AddToggle("FullBright", function(state)
     if state  then
+fullbright = true
 while task.wait() and fullbright do
         FullBirght(true)
 end
     else
+                fullbright = false
 		FullBirght(false)
     end
 end, false)
@@ -246,7 +248,7 @@ end, false)
 lib:AddToggle("WalkSpeed", function(state)
     if state  then
 		plrspeed = true
-        while plrspeed and game.RunService.RenderStepped:Wait() do
+        while plrspeed and task.wait() do
 			WalkSpeed(true)
 		end
     else
