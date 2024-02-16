@@ -155,7 +155,7 @@ end
 --4
 local function FullBirght(action)
 	if action then
-		lighting.OutdoorAmbient = Color3.fromRGB(200,200,200)
+		lighting.OutdoorAmbient = Color3.fromRGB(150,150,150)
 		lighting.FogEnd = 1000
 	else
 		lighting.OutdoorAmbient = Color3.fromRGB(0,0,0)
@@ -181,7 +181,7 @@ local function WalkSpeed(action)
 	if action then
 		player.Character.Humanoid.WalkSpeed = walkspeed
 	else
-		player.Character.Humanoid.walkspeed = defoultwalkspeed
+		player.Character.Humanoid.WalkSpeed = defoultwalkspeed
 	end
 end
 --Player's Esp
@@ -244,7 +244,7 @@ lib:AddToggle("WalkSpeed", function(state)
     if state  then
 		plrspeed = true
         while plrspeed do
-			task.wait(0.005)
+			task.wait(0.003)
 			WalkSpeed(true)
 		end
     else
