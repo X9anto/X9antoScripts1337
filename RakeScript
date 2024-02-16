@@ -156,7 +156,7 @@ end
 local function FullBirght(action)
 	if action then
 		lighting.OutdoorAmbient = Color3.fromRGB(150,150,150)
-		lighting.FogEnd = 1000
+		lighting.FogEnd = 500
 	else
 		lighting.OutdoorAmbient = Color3.fromRGB(0,0,0)
 		if lighting.ClockTime <= 14 and lighting.ClockTime > 1 then
