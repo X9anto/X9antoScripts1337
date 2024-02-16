@@ -8,6 +8,7 @@ local lighting = game:GetService("Lighting")
 local player = game.Players.LocalPlayer
 local defoultwalkspeed = player.Character:FindFirstChild("Humanoid").WalkSpeed
 local walkspeed = defoultwalkspeed
+local fullbright = false
 local plrspeed = false
 local plresp = false
 local rakeesp = false
@@ -226,7 +227,9 @@ end, false)
 --FullBright
 lib:AddToggle("FullBright", function(state)
     if state  then
+while task.wait() and fullbright do
         FullBirght(true)
+end
     else
 		FullBirght(false)
     end
@@ -243,8 +246,7 @@ end, false)
 lib:AddToggle("WalkSpeed", function(state)
     if state  then
 		plrspeed = true
-        while plrspeed do
-			task.wait(0.003)
+        while plrspeed and game.RunService.RenderStepped:Wait() do
 			WalkSpeed(true)
 		end
     else
