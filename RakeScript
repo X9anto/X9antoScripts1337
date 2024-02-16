@@ -242,11 +242,13 @@ end, false)
 --WalkSpeed
 lib:AddToggle("WalkSpeed", function(state)
     if state  then
-		plrspeed = task
+		plrspeed = true
         while plrspeed do
+			task.wait(0.005)
 			WalkSpeed(true)
 		end
     else
+		plrspeed = false
 		WalkSpeed(false)
     end
 end, false)
