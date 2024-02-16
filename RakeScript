@@ -1,0 +1,268 @@
+local version = "1.2.6.2"
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/X9anto/X9antoScripts1337/main/X9antoUI"))()
+lib:SetTitle("Sigma By X9anto/Tg @X9anto Ver:"..version)
+lib:SetIcon("http://www.roblox.com/asset/?id=15235770505")
+-- Переменные
+local Players = game:GetService("Players")
+local lighting = game:GetService("Lighting")
+local player = game.Players.LocalPlayer
+local defoultwalkspeed = player.Character:FindFirstChild("Humanoid").WalkSpeed
+local walkspeed = defoultwalkspeed
+local plrspeed = false
+local plresp = false
+local rakeesp = false
+local flaregunesp = false
+--Function's
+--1
+local function PlrEsp(action)
+	for _,plr in ipairs(Players:GetChildren()) do
+		if plr and plr~=game.Players.LocalPlayer  then
+			local char = plr.Character
+			if action then
+				if char and not char:FindFirstChild("Esp") then
+					local esp = Instance.new("Highlight",char)
+					local buildboardgui = Instance.new("BillboardGui",char)
+					local textlabel = Instance.new("TextLabel",buildboardgui)
+					buildboardgui.AlwaysOnTop = true
+					buildboardgui.Size = UDim2.new(15,0,8,0)
+					buildboardgui.Name = "EspBuild"
+					textlabel.TextScaled = true
+					textlabel.Size = UDim2.new(1,0,1,0)
+					textlabel.BackgroundTransparency = 1
+					textlabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+					textlabel.Text = char.Name
+					textlabel.Name = "EspText"
+					esp.Name = "Esp"
+					esp.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+					esp.OutlineColor = Color3.fromRGB(0, 255, 0)
+					esp.OutlineTransparency = 0.2
+					esp.FillTransparency = 0.35
+					if char:FindFirstChild("Humanoid") then
+						if char.Humanoid.Health >= 75 then
+							esp.FillColor = Color3.fromRGB(0, 255, 30)
+						elseif char.Humanoid.Health < 75 and char.Humanoid.Health >= 40 then
+							esp.FillColor = Color3.fromRGB(255, 240, 0)
+						elseif char.Humanoid.Health < 40 then
+							esp.FillColor = Color3.fromRGB(255, 65, 0)
+						end
+					end
+					task.delay(1,function()
+						if esp then
+							esp:Destroy()
+						end
+						if buildboardgui then
+							buildboardgui:Destroy()
+						end
+					end)
+				end
+			else
+				if char and char:FindFirstChild("Esp") then
+					char:FindFirstChild("Esp"):Destroy()
+				end
+				if char and char:FindFirstChild("EspBuild") then
+					char:FindFirstChild("EspBuild"):Destroy()
+				end
+			end
+		end
+	end
+end
+--2
+local function RakeEsp(action)
+	if workspace:FindFirstChild("Rake") then
+		local Rake = workspace:FindFirstChild("Rake")
+		if action then
+			if Rake and not Rake:FindFirstChild("Esp") then
+				local esp = Instance.new("Highlight",Rake)
+				local buildboardgui = Instance.new("BillboardGui",Rake)
+				local textlabel = Instance.new("TextLabel",buildboardgui)
+				buildboardgui.AlwaysOnTop = true
+				buildboardgui.Size = UDim2.new(15,0,8,0)
+				buildboardgui.Name = "EspBuild"
+				textlabel.TextScaled = true
+				textlabel.Size = UDim2.new(1,0,1,0)
+				textlabel.BackgroundTransparency = 1
+				textlabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+				textlabel.Text = Rake.Name
+				textlabel.Name = "EspText"
+				esp.Name = "Esp"
+				esp.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+				esp.OutlineColor = Color3.fromRGB(0, 255, 0)
+				esp.OutlineTransparency = 0.2
+				esp.FillTransparency = 0.35
+				esp.FillColor = Color3.fromRGB(25, 160, 255)
+				task.delay(1,function()
+					if esp then
+						esp:Destroy()
+					end
+					if buildboardgui then
+						buildboardgui:Destroy()
+					end
+				end)
+			end
+		else
+			if Rake and Rake:FindFirstChild("Esp") then
+				Rake:FindFirstChild("Esp"):Destroy()
+			end
+			if Rake and Rake:FindFirstChild("EspBuild") then
+				Rake:FindFirstChild("EspBuild"):Destroy()
+			end
+		end
+	end
+end
+--3
+local function FlareGunEsp(action)
+	if workspace:FindFirstChild("FlareGunPickUp") then
+		local FlareGun = workspace:FindFirstChild("FlareGunPickUp")
+		if action then
+			if FlareGun and not FlareGun:FindFirstChild("Esp") then
+				local esp = Instance.new("Highlight",FlareGun)
+				local buildboardgui = Instance.new("BillboardGui",FlareGun)
+				local textlabel = Instance.new("TextLabel",buildboardgui)
+				buildboardgui.AlwaysOnTop = true
+				buildboardgui.Size = UDim2.new(10,0,10,0)
+				buildboardgui.Name = "EspBuild"
+				textlabel.TextScaled = true
+				textlabel.Size = UDim2.new(1,0,1,0)
+				textlabel.BackgroundTransparency = 1
+				textlabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+				textlabel.Text = "FlareGun"
+				textlabel.Name = "EspText"
+				esp.Name = "Esp"
+				esp.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+				esp.OutlineColor = Color3.fromRGB(0, 255, 0)
+				esp.OutlineTransparency = 0.2
+				esp.FillTransparency = 0.35
+				esp.FillColor = Color3.fromRGB(255, 255, 0)
+				task.delay(1,function()
+					if esp then
+						esp:Destroy()
+					end
+					if buildboardgui then
+						buildboardgui:Destroy()
+					end
+				end)
+			end
+		else
+			if FlareGun and FlareGun:FindFirstChild("Esp") then
+				FlareGun:FindFirstChild("Esp"):Destroy()
+			end
+			if FlareGun and FlareGun:FindFirstChild("EspBuild") then
+				FlareGun:FindFirstChild("EspBuild"):Destroy()
+			end
+		end
+	end
+end
+--4
+local function FullBirght(action)
+	if action then
+		lighting.OutdoorAmbient = Color3.fromRGB(200,200,200)
+		lighting.FogEnd = 1000
+	else
+		lighting.OutdoorAmbient = Color3.fromRGB(0,0,0)
+		if lighting.ClockTime <= 14 and lighting.ClockTime > 1 then
+			lighting.FogEnd = 150
+		else
+			lighting.FogEnd = 75
+		end
+	end
+end
+--5
+local function UnlockCam(action)
+	if action then
+		player.CameraMode = Enum.CameraMode.Classic
+		player.CameraMaxZoomDistance = 500
+	else
+		player.CameraMode = Enum.CameraMode.LockFirstPerson
+		player.CameraMaxZoomDistance = 0.5
+	end
+end
+--6
+local function WalkSpeed(action)
+	if action then
+		player.Character.Humanoid.WalkSpeed = walkspeed
+	else
+		player.Character.Humanoid.walkspeed = defoultwalkspeed
+	end
+end
+--Player's Esp
+lib:AddToggle("Player's Esp", function(state)
+    if state  then
+        plresp = true
+        while plresp do
+            task.wait(1)
+            PlrEsp(true)
+        end
+    else
+        plresp = false
+		PlrEsp(false)
+    end
+end, false)
+--Rake Esp
+lib:AddToggle("Rake Esp", function(state)
+    if state  then
+        rakeesp = true
+        while rakeesp do
+            task.wait(1)
+            RakeEsp(true)
+        end
+    else
+    	rakeesp = false
+    	RakeEsp(false)
+    end
+end, false)
+--FlareGun Esp
+lib:AddToggle("FlareGun Esp", function(state)
+    if state  then
+        flaregunesp = true
+        while flaregunesp do
+            task.wait(1)
+            FlareGunEsp(true)
+        end
+    else
+		flaregunesp = false
+    	FlareGunEsp(false)
+    end
+end, false)
+--FullBright
+lib:AddToggle("FullBright", function(state)
+    if state  then
+        FullBirght(true)
+    else
+		FullBirght(false)
+    end
+end, false)
+--UnlockCam
+lib:AddToggle("UnlockCam", function(state)
+    if state  then
+        UnlockCam(true)
+    else
+		UnlockCam(false)
+    end
+end, false)
+--WalkSpeed
+lib:AddToggle("WalkSpeed", function(state)
+    if state  then
+		plrspeed = task
+        while plrspeed do
+			WalkSpeed(true)
+		end
+    else
+		WalkSpeed(false)
+    end
+end, false)
+--ChangeSpeed
+lib:AddComboBox("FarmSpeed", {"5","10","15","20","29"}, function(selection)
+    if selection == "5" then
+        walkspeed = 5
+    elseif selection == "10" then
+        walkspeed = 10
+    elseif selection == "15" then
+		walkspeed = 15
+    elseif selection == "20" then
+		walkspeed = 20
+    elseif selection == "29" then
+        walkspeed = 29
+    end
+end)
+-- Theme
+lib:SetTheme("Sigma")
